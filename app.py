@@ -10,9 +10,9 @@ if os.path.exists(model_path):
     model = joblib.load(model_path)
 else:
     st.error(f"Model file '{model_path}' not found. Please ensure it is in the same directory.")
-    st.stop() # Stops execution if the model is missing
+    st.stop() 
 
-st.title("🎓 Student Pass/Fail Prediction System")
+st.title("Student Pass/Fail Prediction System")
 
 # 2. Organized layout using columns for a cleaner look
 col1, col2 = st.columns(2)
@@ -40,10 +40,11 @@ if st.button("Predict Result", type="primary"):
         
         st.markdown("---")
         if prediction[0] == 1:
-            st.success("### Prediction: **PASS** ✅")
+            st.success("### Prediction: **PASS**")
             st.balloons()
         else:
-            st.error("### Prediction: **FAIL** ❌")
+            st.error("### Prediction: **FAIL**")
             
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
+
